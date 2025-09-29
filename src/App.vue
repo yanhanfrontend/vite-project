@@ -11,51 +11,27 @@
             </template>
             <el-menu-item-group>
               <template #title>Group 1</template>
-              <el-menu-item index="1-1">Option 1</el-menu-item>
-              <el-menu-item index="1-2">Option 2</el-menu-item>
+              <el-menu-item index="1-1">
+                Option 1
+                <el-button type="primary" size="mini" @click="increment">
+                  Increment
+                </el-button>
+              </el-menu-item>
+              <el-menu-item index="1-2">
+                Option 2
+                <el-button type="primary" size="mini" @click="increment">
+                  Increment
+                </el-button>
+              </el-menu-item>
             </el-menu-item-group>
             <el-menu-item-group title="Group 2">
-              <el-menu-item index="1-3">Option 3</el-menu-item>
+              <el-menu-item index="1-3">
+                {{ name }} {{ count }} {{ doubleCount }}
+              </el-menu-item>
             </el-menu-item-group>
             <el-sub-menu index="1-4">
               <template #title>Option4</template>
               <el-menu-item index="1-4-1">Option 4-1</el-menu-item>
-            </el-sub-menu>
-          </el-sub-menu>
-          <el-sub-menu index="2">
-            <template #title>
-              <el-icon><icon-menu /></el-icon>Navigator Two
-            </template>
-            <el-menu-item-group>
-              <template #title>Group 1</template>
-              <el-menu-item index="2-1">Option 1</el-menu-item>
-              <el-menu-item index="2-2">Option 2</el-menu-item>
-            </el-menu-item-group>
-            <el-menu-item-group title="Group 2">
-              <el-menu-item index="2-3">Option 3</el-menu-item>
-            </el-menu-item-group>
-            <el-sub-menu index="2-4">
-              <template #title>Option 4</template>
-              <el-menu-item index="2-4-1">Option 4-1</el-menu-item>
-            </el-sub-menu>
-          </el-sub-menu>
-          <el-sub-menu index="3">
-            <template #title>
-              <el-icon>
-                <setting />
-              </el-icon>Navigator Three
-            </template>
-            <el-menu-item-group>
-              <template #title>Group 1</template>
-              <el-menu-item index="3-1">Option 1</el-menu-item>
-              <el-menu-item index="3-2">Option 2</el-menu-item>
-            </el-menu-item-group>
-            <el-menu-item-group title="Group 2">
-              <el-menu-item index="3-3">Option 3</el-menu-item>
-            </el-menu-item-group>
-            <el-sub-menu index="3-4">
-              <template #title>Option 4</template>
-              <el-menu-item index="3-4-1">Option 4-1</el-menu-item>
             </el-sub-menu>
           </el-sub-menu>
         </el-menu>
@@ -137,6 +113,19 @@
 
             <PhotoWall />
           </el-tab-pane>
+
+          <el-tab-pane>
+            <template #label>
+              <span class="custom-tabs-label flex items-center">
+                <el-icon>
+                  <Grid />
+                </el-icon>
+                <span>高德地图</span>
+              </span>
+            </template>
+
+            <AMapDemo />
+          </el-tab-pane>
         </el-tabs>
       </el-main>
     </el-container>
@@ -153,7 +142,14 @@ import TableDemo from './pages/TableDemo.vue'
 import FormDemo from './pages/FormDemo.vue'
 import DescListDemo from './pages/DescListDemo.vue'
 import PhotoWall from './pages/PhotoWall.vue'
+import AMapDemo from './pages/AmapDemo.vue'
 
+import { storeToRefs } from 'pinia'
+import { useCounterStore } from './store/counterStore'
+
+const store = useCounterStore()
+const { increment } = store
+const { count, name, doubleCount } = storeToRefs(store)
 </script>
 
 <style scoped>
