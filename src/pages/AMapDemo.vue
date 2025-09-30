@@ -48,7 +48,7 @@ const loadAreas = async (citycode) => {
   areas.value = Object.keys(result).map(key => ({area_id: key, area_name: result[key]}));
 }
 
-const loadShops = async () => {
+const districtSearch = () => {
   let areaName = areas.value.find(item => item.area_id == area_id.value).area_name;
 
   var district = new currentAMap.DistrictSearch({
@@ -74,30 +74,32 @@ const loadShops = async () => {
     }
     map.value.setZoom(ZOOM);
   });
+}
+
+const loadShops = async () => {
+  districtSearch();
 
   let {shop_data} = await $get("/api/at/shop", {
     city_id: city_id.value,
     area_id: area_id.value
   })
-
   shop_data.forEach(item => {
-    let content = `
-    <div class="flex items-center">
-      <div class="mr-1"><img class="w-26" src="${item.shop_ico}"/></div>
-      <div class="text-base text-[#666]">
-        <div>商城：${item.shop_name}</div>
-        <div>地址：${item.addr}</div>
-        <div>电话：${item.mobile}</div>
-        <div>简介：${item.shop_desc}</div>
-      </div>
-    </div>
-    `
-
     const marker = new currentAMap.Marker({
       position: [item.map_longitude, item.map_latitude],
       title: item.shop_name,
     });
     map.value.add(marker);
+    let content = `
+      <div class="flex items-center">
+        <div class="mr-1"><img class="w-26" src="${item.shop_ico}"/></div>
+        <div class="text-base text-[#666]">
+          <div>商城：${item.shop_name}</div>
+          <div>地址：${item.addr}</div>
+          <div>电话：${item.mobile}</div>
+          <div>简介：${item.shop_desc}</div>
+        </div>
+      </div>
+    `
     marker.on("click", (e) => {
       let infoWindow = new currentAMap.InfoWindow({
         content,
