@@ -6,8 +6,9 @@
           <el-sub-menu index="1">
             <template #title>
               <el-icon>
-                <message />
-              </el-icon>Navigator One
+                <message/>
+              </el-icon>
+              Navigator One
             </template>
             <el-menu-item-group>
               <template #title>Group 1</template>
@@ -47,7 +48,7 @@
 
           <div>
             <el-dropdown>
-              <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
+              <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"/>
               <template #dropdown>
                 <el-dropdown-menu>
                   <el-dropdown-item>View</el-dropdown-item>
@@ -66,65 +67,65 @@
             <template #label>
               <span class="custom-tabs-label flex items-center">
                 <el-icon>
-                  <Menu />
-                </el-icon>
-                <span>表格</span>
-              </span>
-            </template>
-
-            <TableDemo />
-          </el-tab-pane>
-
-          <el-tab-pane>
-            <template #label>
-              <span class="custom-tabs-label flex items-center">
-                <el-icon>
-                  <Operation />
-                </el-icon>
-                <span>表单</span>
-              </span>
-            </template>
-
-            <FormDemo />
-          </el-tab-pane>
-
-          <el-tab-pane>
-            <template #label>
-              <span class="custom-tabs-label flex items-center">
-                <el-icon>
-                  <Document />
-                </el-icon>
-                <span>描述列表</span>
-              </span>
-            </template>
-
-            <DescListDemo />
-          </el-tab-pane>
-
-          <el-tab-pane>
-            <template #label>
-              <span class="custom-tabs-label flex items-center">
-                <el-icon>
-                  <Grid />
-                </el-icon>
-                <span>照片墙</span>
-              </span>
-            </template>
-
-            <PhotoWall />
-          </el-tab-pane>
-
-          <el-tab-pane>
-            <template #label>
-              <span class="custom-tabs-label flex items-center">
-                <el-icon>
-                  <Grid />
+                  <Grid/>
                 </el-icon>
                 <span>高德地图</span>
               </span>
             </template>
 
-            <AMapDemo />
+            <AMapDemo/>
+          </el-tab-pane>
+
+          <el-tab-pane>
+            <template #label>
+              <span class="custom-tabs-label flex items-center">
+                <el-icon>
+                  <Menu/>
+                </el-icon>
+                <span>表格</span>
+              </span>
+            </template>
+
+            <TableDemo/>
+          </el-tab-pane>
+
+          <el-tab-pane>
+            <template #label>
+              <span class="custom-tabs-label flex items-center">
+                <el-icon>
+                  <Operation/>
+                </el-icon>
+                <span>表单</span>
+              </span>
+            </template>
+
+            <FormDemo/>
+          </el-tab-pane>
+
+          <el-tab-pane>
+            <template #label>
+              <span class="custom-tabs-label flex items-center">
+                <el-icon>
+                  <Document/>
+                </el-icon>
+                <span>描述列表</span>
+              </span>
+            </template>
+
+            <DescListDemo/>
+          </el-tab-pane>
+
+          <el-tab-pane>
+            <template #label>
+              <span class="custom-tabs-label flex items-center">
+                <el-icon>
+                  <Grid/>
+                </el-icon>
+                <span>照片墙</span>
+              </span>
+            </template>
+
+            <PhotoWall/>
           </el-tab-pane>
         </el-tabs>
       </el-main>
@@ -144,12 +145,12 @@ import DescListDemo from './pages/DescListDemo.vue'
 import PhotoWall from './pages/PhotoWall.vue'
 import AMapDemo from './pages/AmapDemo.vue'
 
-import { storeToRefs } from 'pinia'
-import { useCounterStore } from './store/counterStore'
+import {storeToRefs} from 'pinia'
+import {useCounterStore} from './store/counterStore'
 
 const store = useCounterStore()
-const { increment } = store
-const { count, name, doubleCount } = storeToRefs(store)
+const {increment} = store
+const {count, name, doubleCount} = storeToRefs(store)
 </script>
 
 <style scoped>

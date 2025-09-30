@@ -1,21 +1,21 @@
 <template>
   <el-scrollbar height="calc(100vh - 160px)">
     <el-upload v-model:file-list="fileList" action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
-      list-type="picture-card" :on-preview="handlePictureCardPreview" :on-remove="handleRemove">
+               list-type="picture-card" :on-preview="handlePictureCardPreview" :on-remove="handleRemove">
       <el-icon>
-        <Plus />
+        <Plus/>
       </el-icon>
     </el-upload>
 
     <el-dialog v-model="dialogVisible">
-      <img w-full :src="dialogImageUrl" alt="Preview Image" />
+      <img w-full :src="dialogImageUrl" alt="Preview Image"/>
     </el-dialog>
   </el-scrollbar>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import type { UploadProps, UploadUserFile } from 'element-plus'
+import {ref} from 'vue'
+import type {UploadProps, UploadUserFile} from 'element-plus'
 
 const fileList = ref<UploadUserFile[]>([
   {

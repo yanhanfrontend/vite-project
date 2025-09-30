@@ -1,15 +1,15 @@
 <template>
   <el-scrollbar height="calc(100vh - 160px)">
     <el-table ref="multipleTableRef" :data="tableData" @selection-change="handleSelectionChange" style="width: 100%">
-      <el-table-column type="selection" :selectable="selectable" width="35" />
-      <el-table-column prop="date" label="Date" />
+      <el-table-column type="selection" :selectable="selectable" width="35"/>
+      <el-table-column prop="date" label="Date"/>
       <el-table-column label="Delivery Info">
-        <el-table-column prop="name" label="Name" />
+        <el-table-column prop="name" label="Name"/>
         <el-table-column label="Address Info">
-          <el-table-column prop="state" label="State" />
-          <el-table-column prop="city" label="City" />
-          <el-table-column prop="address" label="Address" />
-          <el-table-column prop="zip" label="Zip" />
+          <el-table-column prop="state" label="State"/>
+          <el-table-column prop="city" label="City"/>
+          <el-table-column prop="address" label="Address"/>
+          <el-table-column prop="zip" label="Zip"/>
         </el-table-column>
       </el-table-column>
       <el-table-column label="Operations">
@@ -27,8 +27,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import type { TableInstance } from 'element-plus'
+import {ref} from 'vue'
+import type {TableInstance} from 'element-plus'
 
 const multipleTableRef = ref<TableInstance>()
 

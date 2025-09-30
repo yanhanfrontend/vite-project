@@ -14,7 +14,7 @@
         <template #label>
           <div class="cell-item">
             <el-icon :style="iconStyle">
-              <user />
+              <user/>
             </el-icon>
             Username
           </div>
@@ -25,7 +25,7 @@
         <template #label>
           <div class="cell-item">
             <el-icon :style="iconStyle">
-              <iphone />
+              <iphone/>
             </el-icon>
             Telephone
           </div>
@@ -36,7 +36,7 @@
         <template #label>
           <div class="cell-item">
             <el-icon :style="iconStyle">
-              <location />
+              <location/>
             </el-icon>
             Place
           </div>
@@ -47,7 +47,7 @@
         <template #label>
           <div class="cell-item">
             <el-icon :style="iconStyle">
-              <tickets />
+              <tickets/>
             </el-icon>
             Remarks
           </div>
@@ -58,7 +58,7 @@
         <template #label>
           <div class="cell-item">
             <el-icon :style="iconStyle">
-              <office-building />
+              <office-building/>
             </el-icon>
             Address
           </div>
@@ -70,8 +70,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import type { ComponentSize } from 'element-plus'
+import {ref, computed} from 'vue'
+import type {ComponentSize} from 'element-plus'
 
 const size = ref<ComponentSize>('default')
 
