@@ -7,17 +7,21 @@
     </el-col>
   </el-row>
 
-  <div class="flex justify-end">
+  <div class="flex justify-end mt-2">
     <el-pagination
         v-model:current-page="currentPage"
         :page-size="pageSize"
+        :pager-count="50"
         :disabled="disabled"
         :background="background"
         layout="total, prev, pager, next"
         :total="allData.length"
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
-    />
+        prev-text="上一页"
+        next-text="下一页"
+    >
+    </el-pagination>
   </div>
 </template>
 
