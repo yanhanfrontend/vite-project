@@ -69,6 +69,19 @@
                 <el-icon>
                   <Grid/>
                 </el-icon>
+                <span>B站歌单镜像</span>
+              </span>
+            </template>
+
+            <BilibiliMusicListImage/>
+          </el-tab-pane>
+
+          <el-tab-pane>
+            <template #label>
+              <span class="custom-tabs-label flex items-center">
+                <el-icon>
+                  <Grid/>
+                </el-icon>
                 <span>高德地图</span>
               </span>
             </template>
@@ -127,6 +140,32 @@
 
             <PhotoWall/>
           </el-tab-pane>
+
+          <el-tab-pane>
+            <template #label>
+              <span class="custom-tabs-label flex items-center">
+                <el-icon>
+                  <Grid/>
+                </el-icon>
+                <span>财政资金承接分析</span>
+              </span>
+            </template>
+
+            <CaiZhengZiJinChengJieFenXi/>
+          </el-tab-pane>
+
+          <el-tab-pane>
+            <template #label>
+              <span class="custom-tabs-label flex items-center">
+                <el-icon>
+                  <Grid/>
+                </el-icon>
+                <span>财政业务客户营销分析</span>
+              </span>
+            </template>
+
+            <CaiZhengYeWuKeHuYingXiaoFenXi/>
+          </el-tab-pane>
         </el-tabs>
       </el-main>
     </el-container>
@@ -139,11 +178,14 @@ import {
   Document,
   Menu
 } from '@element-plus/icons-vue'
+import BilibiliMusicListImage from './pages/BilibiliMusicListImage.vue'
+import AMapDemo from './pages/AmapDemo.vue'
 import TableDemo from './pages/TableDemo.vue'
 import FormDemo from './pages/FormDemo.vue'
 import DescListDemo from './pages/DescListDemo.vue'
 import PhotoWall from './pages/PhotoWall.vue'
-import AMapDemo from './pages/AmapDemo.vue'
+import CaiZhengZiJinChengJieFenXi from './pages/01caiZhengZiJinChengJieFenXi/index.vue'
+import CaiZhengYeWuKeHuYingXiaoFenXi from './pages/02caiZhengYeWuKeHuYingXiaoFenXi/index.vue'
 
 import {storeToRefs} from 'pinia'
 import {useCounterStore} from './store/counterStore'
