@@ -69,19 +69,6 @@
                 <el-icon>
                   <Grid/>
                 </el-icon>
-                <span>B站歌单镜像</span>
-              </span>
-            </template>
-
-            <BilibiliMusicListImage/>
-          </el-tab-pane>
-
-          <el-tab-pane>
-            <template #label>
-              <span class="custom-tabs-label flex items-center">
-                <el-icon>
-                  <Grid/>
-                </el-icon>
                 <span>高德地图</span>
               </span>
             </template>
@@ -178,7 +165,6 @@ import {
   Document,
   Menu
 } from '@element-plus/icons-vue'
-import BilibiliMusicListImage from './pages/BilibiliMusicListImage.vue'
 import AMapDemo from './pages/AmapDemo.vue'
 import TableDemo from './pages/TableDemo.vue'
 import FormDemo from './pages/FormDemo.vue'
